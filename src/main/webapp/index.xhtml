@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+
+    </h:head>
+
+    <h:body>
+
+        <p:dataTable id="alum" var="al" value="#{indexView.alumnoPojo}">
+            <f:facet name="header">
+                Alumnos
+                <p:commandButton id="toggler" type="button" style="float:right" icon="ui-icon-calculator" />
+                <p:columnToggler datasource="alum" trigger="toggler" />
+            </f:facet>
+
+            <p:column headerText="Código">
+                <h:outputText value="#{al.codigo}" />
+            </p:column>
+            
+            <p:column headerText="Nie">
+                <h:outputText value="#{al.nie}" />
+            </p:column>
+
+            <p:column headerText="Nombre">
+                <h:outputText value="#{al.nombres}" />
+            </p:column>
+            
+            <p:column headerText="Apellido 1">
+                <h:outputText value="#{al.apellido1}" />
+            </p:column>
+            
+            <p:column headerText="Apellido 2">
+                <h:outputText value="#{al.apellido2}" />
+            </p:column>
+            
+            <p:column headerText="Genero">
+                <h:outputText value="#{al.genero}" />
+            </p:column>
+            
+            <p:column headerText="Activo">
+                <h:outputText value="#{al.activo}" />
+            </p:column>
+
+            <f:facet name="footer">
+                Total: #{indexView.alumnoPojo.size()}
+            </f:facet>
+        </p:dataTable>
+
+    </h:body>
+</html>

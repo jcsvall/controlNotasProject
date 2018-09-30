@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+
+    </h:head>
+
+    <h:body>
+
+        <h:outputText value="testing"/>
+
+        <p:dataTable id="alum" var="al" value="#{indexView.alumnoPojo}">
+            <f:facet name="header">
+                Alumnos header
+            </f:facet>
+
+            <p:column headerText="Id">
+                <h:outputText value="#{al.codigo}" />
+            </p:column>
+
+            <p:column headerText="Year">
+                <h:outputText value="#{al.nombres}" />
+            </p:column>
+
+            <f:facet name="footer">
+            </f:facet>
+        </p:dataTable>
+
+    </h:body>
+</html>
